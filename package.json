@@ -1,0 +1,55 @@
+{
+  "name": "govrn-cli",
+  "version": "0.1.0",
+  "description": "Enterprise-grade AI context governance engine and CLI",
+  "type": "module",
+  "bin": {
+    "govrn-cli": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "ESBUILD_BINARY_PATH=$HOME/.local/bin/esbuild node ./node_modules/tsup/dist/cli-default.js",
+    "dev": "ESBUILD_BINARY_PATH=$HOME/.local/bin/esbuild node ./node_modules/tsup/dist/cli-default.js --watch",
+    "typecheck": "node ./node_modules/typescript/bin/tsc --noEmit",
+    "test": "ESBUILD_BINARY_PATH=$HOME/.local/bin/esbuild-0.21.5 node ./node_modules/vitest/vitest.mjs run",
+    "test:watch": "ESBUILD_BINARY_PATH=$HOME/.local/bin/esbuild-0.21.5 node ./node_modules/vitest/vitest.mjs"
+  },
+  "keywords": [
+    "ai",
+    "governance",
+    "cli",
+    "rules",
+    "copilot",
+    "cursor",
+    "claude",
+    "gemini",
+    "codex",
+    "kiro",
+    "windsurf",
+    "sarif"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@clack/prompts": "^1.9.0",
+    "commander": "^15.1.0",
+    "fast-glob": "^3.3.3",
+    "gray-matter": "^4.0.3",
+    "mdast-util-from-markdown": "^2.1.0",
+    "micromatch": "^4.0.8",
+    "picocolors": "^1.1.1",
+    "tiktoken": "^1.0.22",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/micromatch": "^4.0.9",
+    "@types/node": "^22.10.7",
+    "tsup": "^9.0.0",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8"
+  }
+}
