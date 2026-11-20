@@ -1,0 +1,10 @@
+{
+  "agentsPath": ".ai/",
+  "topology": "auto",
+  "maxTokens": 2000,
+  "strictGlobs": true,
+  "sensitivePaths": [
+    "config/secrets/**",
+    ".env*"
+  ]
+}

@@ -1,0 +1,13 @@
+# Secrets & Credentials
+.env*
+config/secrets/**
+
+# Dependencies & Build Outputs
+node_modules/
+dist/
+coverage/
+*.tgz
+*.log
+
+# Version Control
+.git/

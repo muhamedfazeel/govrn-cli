@@ -1,0 +1,8 @@
+---
+description: Central Orchestrator Router
+globs: ["src/**/*.ts"]
+---
+
+# Cursor Orchestrator Pointer
+
+Refer to the [Central Orchestrator](.ai/agents/orchestrator.md) for architecture, subagents, and governance standards.
