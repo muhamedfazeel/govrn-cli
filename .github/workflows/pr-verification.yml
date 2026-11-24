@@ -1,0 +1,33 @@
+name: PR Verification
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+  security-events: write
+
+concurrency:
+  group: pr-verification-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Review PR Quality Gates
+    uses: groot-arena/review-pr/.github/workflows/pr-verification.yml@v1.0.0
+    with:
+      language: 'node'
+      runtime-version: '24'
+      # Source code commands and report paths will be activated once feature branches are merged to main:
+      # install-command: 'npm ci'
+      # typecheck-command: 'npm run typecheck'
+      # lint-command: 'npx eslint . --format @microsoft/eslint-formatter-sarif -o lint.sarif || true'
+      # test-command: 'npx vitest run --reporter=junit --outputFile=junit.xml --coverage || true'
+      # build-command: 'npm run build'
+      # junit-path: 'junit.xml'
+      # coverage-path: 'coverage/lcov.info'
+      # sarif-path: 'lint.sarif'
+      # coverage-threshold: 80
+      # diff-coverage-threshold: 80
