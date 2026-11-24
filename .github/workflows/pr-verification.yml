@@ -16,7 +16,7 @@ concurrency:
 jobs:
   verify:
     name: Review PR Quality Gates
-    uses: groot-arena/review-pr/.github/workflows/pr-verification.yml@v1.0.0
+    uses: groot-arena/review-pr/.github/workflows/pr-verification.yml@2a5f773e666b4b2b274e566f9e434ce57da31648
     with:
       language: 'node'
       runtime-version: '24'
