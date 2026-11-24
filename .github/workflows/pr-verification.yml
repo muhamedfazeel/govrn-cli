@@ -21,14 +21,13 @@ jobs:
     with:
       language: 'node'
       runtime-version: '24'
-      # Source code commands and report paths will be activated once feature branches are merged to main:
-      # install-command: 'npm ci'
-      # typecheck-command: 'npm run typecheck'
-      # lint-command: 'npx eslint . --format @microsoft/eslint-formatter-sarif -o lint.sarif || true'
-      # test-command: 'npx vitest run --reporter=junit --outputFile=junit.xml --coverage || true'
-      # build-command: 'npm run build'
-      # junit-path: 'junit.xml'
-      # coverage-path: 'coverage/lcov.info'
-      # sarif-path: 'lint.sarif'
-      # coverage-threshold: 80
-      # diff-coverage-threshold: 80
+      install-command: 'npm ci'
+      typecheck-command: 'npm run typecheck'
+      lint-command: 'npm run lint:sarif || true'
+      test-command: 'npm run test:ci || true'
+      build-command: 'npm run build'
+      junit-path: 'junit.xml'
+      coverage-path: 'coverage/lcov.info'
+      sarif-path: 'lint.sarif'
+      coverage-threshold: 80
+      diff-coverage-threshold: 80
