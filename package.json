@@ -11,11 +11,16 @@
     "README.md"
   ],
   "scripts": {
-    "build": "ESBUILD_BINARY_PATH=$HOME/.local/bin/esbuild node ./node_modules/tsup/dist/cli-default.js",
-    "dev": "ESBUILD_BINARY_PATH=$HOME/.local/bin/esbuild node ./node_modules/tsup/dist/cli-default.js --watch",
-    "typecheck": "node ./node_modules/typescript/bin/tsc --noEmit",
-    "test": "ESBUILD_BINARY_PATH=$HOME/.local/bin/esbuild-0.21.5 node ./node_modules/vitest/vitest.mjs run",
-    "test:watch": "ESBUILD_BINARY_PATH=$HOME/.local/bin/esbuild-0.21.5 node ./node_modules/vitest/vitest.mjs"
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:sarif": "eslint . --format @microsoft/eslint-formatter-sarif -o lint.sarif",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ci": "vitest run --reporter=junit --outputFile=junit.xml --coverage"
   },
   "keywords": [
     "ai",
@@ -46,10 +51,15 @@
     "zod": "^4.6.7"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@microsoft/eslint-formatter-sarif": "^3.1.0",
     "@types/micromatch": "^4.0.9",
     "@types/node": "^22.10.7",
+    "@vitest/coverage-v8": "^2.1.9",
+    "eslint": "^10.15.0",
     "tsup": "^9.0.0",
     "typescript": "^5.7.3",
+    "typescript-eslint": "^8.74.0",
     "vitest": "^2.1.8"
   }
 }

@@ -1,4 +1,7 @@
 node_modules/
 dist/
+coverage/
+*.sarif
+junit.xml
 *.log
 *.tgz
