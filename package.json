@@ -1,0 +1,65 @@
+{
+  "name": "govrn-cli",
+  "version": "0.1.0",
+  "description": "Enterprise-grade AI context governance engine and CLI",
+  "type": "module",
+  "bin": {
+    "govrn-cli": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:sarif": "eslint . --format @microsoft/eslint-formatter-sarif -o lint.sarif",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ci": "vitest run --reporter=junit --outputFile=junit.xml --coverage"
+  },
+  "keywords": [
+    "ai",
+    "governance",
+    "cli",
+    "rules",
+    "copilot",
+    "cursor",
+    "claude",
+    "gemini",
+    "codex",
+    "kiro",
+    "windsurf",
+    "sarif"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@clack/prompts": "^1.9.0",
+    "commander": "^15.1.0",
+    "fast-glob": "^3.3.3",
+    "gray-matter": "^4.0.3",
+    "mdast-util-from-markdown": "^2.1.0",
+    "micromatch": "^4.0.8",
+    "picocolors": "^1.1.1",
+    "tiktoken": "^1.0.22",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@microsoft/eslint-formatter-sarif": "^3.1.0",
+    "@types/micromatch": "^4.0.9",
+    "@types/node": "^22.10.7",
+    "@vitest/coverage-v8": "^2.1.9",
+    "eslint": "^10.15.0",
+    "tsup": "^9.0.0",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.74.0",
+    "vitest": "^2.1.8"
+  }
+}
